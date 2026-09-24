@@ -14,6 +14,40 @@ Proxmox VE (Type-1) vs VMware Workstation (Type-2)
 - We compare the results.
 - We check which hypervisor is faster.
 
+  ## Architecture
+
+This diagram shows how both hypervisor setups are structured, side by side.
+
+```mermaid
+flowchart TB
+    subgraph HW1["Physical Server Hardware"]
+        direction TB
+        H1["Proxmox VE (Type-1 Hypervisor)<br/>installed directly on hardware"]
+        H1 --> VM1["Ubuntu VM<br/>2 vCPU | 2 GB RAM | 20 GB Disk"]
+        VM1 --> S1["Sysbench CPU Benchmark"]
+    end
+
+    subgraph HW2["Physical Host Computer"]
+        direction TB
+        OS2["Host Operating System<br/>(Windows/Linux)"]
+        OS2 --> H2["VMware Workstation (Type-2 Hypervisor)<br/>installed as an app on the host OS"]
+        H2 --> VM2["Ubuntu VM<br/>2 vCPU | 2 GB RAM | 20 GB Disk"]
+        VM2 --> S2["Sysbench CPU Benchmark"]
+    end
+
+    S1 --> R["Compare Results<br/>Events/sec, Latency, Total Events"]
+    S2 --> R
+    R --> C["results/performance-analysis.md<br/>+ graphs in images/"]
+```
+
+
+- **Type-1 (Proxmox VE)** sits directly on the server hardware. No host OS underneath.
+- **Type-2 (VMware Workstation)** sits on top of a host OS, like a regular application.
+- Both sides run the **same Ubuntu VM** with identical specs (2 vCPU, 2 GB RAM, 20 GB disk).
+- Both sides run the **same benchmark**: `sysbench cpu --cpu-max-prime=20000 run`.
+- Results from both sides are collected and compared in `results/performance-analysis.md`.
+- Comparison graphs are saved in the `images/` folder.
+
 ## VM settings (same on both sides)
 
 - Guest OS: Ubuntu 22.04 or later
