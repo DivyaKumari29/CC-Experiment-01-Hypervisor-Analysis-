@@ -45,6 +45,7 @@
 | Total Events | 17,494 | 7,077 |
 | Events per Second | 1,749.16 | 707.43 |
 | Average Latency | 0.57 ms | 1.41 ms |
+<img width="2085" height="1497" alt="image" src="https://github.com/user-attachments/assets/eefffb36-5ba0-4409-bade-1aa9f666b351" />
 
 ## What each term means
 
