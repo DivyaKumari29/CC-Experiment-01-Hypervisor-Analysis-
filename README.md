@@ -287,20 +287,8 @@ Both VMs must use the **same** settings for a fair comparison.
 | Average Latency | 0.57 ms | 1.41 ms |
 
 **Proxmox VE is about 2.47x faster than VMware Workstation.**
+<img width="1220" height="780" alt="image" src="https://github.com/user-attachments/assets/64164fb0-67eb-4b30-88c5-a49837dd1d15" />
 
-**Overall Dashboard**
-![Overall performance dashboard](images/overall_performance_dashboard.png)
-
-**Events per Second**
-![Events per second comparison](images/events_per_second_comparison.png)
-
-**Total Events**
-![Total events comparison](images/total_events_comparison.png)
-
-**Average Latency**
-![Latency comparison](images/latency_comparison.png)
-
-More details: [`results/performance-analysis.md`](results/performance-analysis.md)
 
 ## 13. Evidence Screenshots
 
